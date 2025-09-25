@@ -9,7 +9,6 @@ Um conector personalizado para N8N que gera números verdadeiramente aleatórios
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação e Configuração](#instalação-e-configuração)
 - [Configuração do Ambiente](#configuração-do-ambiente)
-- [Executando Localmente](#executando-localmente)
 - [Como Usar](#como-usar)
 - [Desenvolvimento](#desenvolvimento)
 - [Executando Testes](#executando-testes)
@@ -136,19 +135,6 @@ npm run test:coverage
 3. Reinicie o N8N: docker-compose restart n8n
 4. Refresh no navegador
 
-## Estrutura do projeto
-
-```
-n8n-random-node/
-├── nodes/Random/           # Código fonte do nó
-│   ├── Random.node.ts     # Implementação principal
-│   └── random.svg         # Ícone
-├── tests/                 # Testes em TypeScript
-├── docker-compose.yml     # Configuração Docker
-├── package.json          # Configuração do projeto
-└── .env.example          # Template de variáveis
-```
-
 ## Troubleshooting
 
 ### Docker não inicia
@@ -169,7 +155,7 @@ docker-compose restart n8n
 Se algo der errado e quiser recomeçar:
 
 ```bash
-npm run clean  # Remove todos os dados
+npm run clean
 npm run build
 npm start
 ```
@@ -178,21 +164,12 @@ Atenção: Isso apaga todos os workflows e dados do N8N.
 
 ## Tecnologias
 
-    N8N - Plataforma de automação
-    TypeScript - Linguagem principal
-    Docker - Containerização
-    PostgreSQL - Banco de dados
-    Jest - Framework de testes
-    Random.org API - Fonte de aleatoriedade
-
-## Configuração de produção
-
-Para usar em produção:
-
-    Altere as senhas no arquivo .env
-    Habilite autenticação básica
-    Configure HTTPS
-    Faça backups regulares
+- N8N - Plataforma de automação
+- TypeScript - Linguagem principal
+- Docker - Containerização
+- PostgreSQL - Banco de dados
+- Jest - Framework de testes
+- Random.org API - Fonte de aleatoriedade
 
 ## Licença
 
