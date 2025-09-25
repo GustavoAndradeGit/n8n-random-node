@@ -1,59 +1,59 @@
 ﻿services:
- postgres:
-   image: postgres:15-alpine
-   restart: always
-   environment:
-     POSTGRES_USER: ${POSTGRES_USER:-n8n}
-     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-n8n_secure_password_2024}
-     POSTGRES_DB: ${POSTGRES_DB:-n8n}
-   volumes:
-     - postgres_data:/var/lib/postgresql/data
-   ports:
-     - "${POSTGRES_PORT:-5432}:5432"
-   healthcheck:
-     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-n8n}"]
-     interval: 10s
-     timeout: 5s
-     retries: 5
-   networks:
-     - n8n-network
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - n8n-network
 
- n8n:
-   image: n8nio/n8n:latest
-   restart: always
-   environment:
-     - DB_TYPE=postgresdb
-     - DB_POSTGRESDB_HOST=postgres
-     - DB_POSTGRESDB_PORT=5432
-     - DB_POSTGRESDB_DATABASE=${POSTGRES_DB:-n8n}
-     - DB_POSTGRESDB_USER=${POSTGRES_USER:-n8n}
-     - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD:-n8n_secure_password_2024}
-     - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE:-false}
-     - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
-     - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-admin_secure_password_2024}
-     - N8N_HOST=${N8N_HOST:-localhost}
-     - N8N_PORT=${N8N_PORT:-5678}
-     - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
-     - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
-     - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-America/Sao_Paulo}
-     - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
-     - N8N_LOG_LEVEL=${N8N_LOG_LEVEL:-info}
-   ports:
-     - "${N8N_PORT:-5678}:5678"
-   volumes:
-     - n8n_data:/home/node/.n8n
-     - ./dist/nodes:/home/node/.n8n/custom/nodes
-     - ./package.json:/home/node/.n8n/custom/package.json
-   depends_on:
-     postgres:
-       condition: service_healthy
-   networks:
-     - n8n-network
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE}
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=${N8N_PORT}
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+      - N8N_LOG_LEVEL=${N8N_LOG_LEVEL}
+    ports:
+      - "${N8N_PORT}:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./dist/nodes:/home/node/.n8n/custom/nodes
+      - ./package.json:/home/node/.n8n/custom/package.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - n8n-network
 
 networks:
- n8n-network:
-   driver: bridge
+  n8n-network:
+    driver: bridge
 
 volumes:
- postgres_data:
- n8n_data:
+  postgres_data:
+  n8n_data:

@@ -61,7 +61,12 @@ npm run build
 cp .env.example .env
 ```
 
-Edite o arquivo .env se necessário. Para desenvolvimento local, as configurações padrão funcionam bem.
+**⚠️ IMPORTANTE**: Edite o arquivo `.env` e substitua as senhas de exemplo por valores seguros:
+
+- `POSTGRES_PASSWORD`: Senha do banco PostgreSQL
+- `N8N_BASIC_AUTH_PASSWORD`: Senha do admin do N8N (se autenticação estiver ativa)
+
+**🔒 SEGURANÇA**: O arquivo `.env` contém informações sensíveis e está configurado no `.gitignore` para não ser commitado no repositório.
 
 ### 5. Inicie o Docker Desktop
 
