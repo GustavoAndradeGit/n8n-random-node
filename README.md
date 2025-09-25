@@ -61,10 +61,18 @@ npm run build
 cp .env.example .env
 ```
 
-**⚠️ IMPORTANTE**: Edite o arquivo `.env` e substitua as senhas de exemplo por valores seguros:
+**⚠️ IMPORTANTE**: Edite o arquivo `.env` e configure as seguintes variáveis:
 
-- `POSTGRES_PASSWORD`: Senha do banco PostgreSQL
-- `N8N_BASIC_AUTH_PASSWORD`: Senha do admin do N8N (se autenticação estiver ativa)
+**Configurações do Banco de Dados:**
+
+- `POSTGRES_USER`: Usuário do PostgreSQL (padrão: `n8n`)
+- `POSTGRES_PASSWORD`: Senha do banco PostgreSQL (**substitua por uma senha segura**)
+- `POSTGRES_DB`: Nome do banco de dados (padrão: `n8n`)
+- `POSTGRES_PORT`: Porta do PostgreSQL (padrão: `5432`)
+
+**Configurações de Autenticação:**
+
+- `N8N_BASIC_AUTH_PASSWORD`: Senha do admin do N8N (**substitua por uma senha segura**)
 
 **🔒 SEGURANÇA**: O arquivo `.env` contém informações sensíveis e está configurado no `.gitignore` para não ser commitado no repositório.
 
