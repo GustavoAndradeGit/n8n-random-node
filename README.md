@@ -2,13 +2,12 @@
 
 Um conector personalizado para N8N que gera números verdadeiramente aleatórios usando a API do Random.org.
 
-## 📋 Índice
+## **Índice**
 
 - [Sobre](#sobre)
 - [Funcionalidades](#funcionalidades)
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação e Configuração](#instalação-e-configuração)
-- [Configuração do Ambiente](#configuração-do-ambiente)
 - [Como Usar](#como-usar)
 - [Desenvolvimento](#desenvolvimento)
 - [Executando Testes](#executando-testes)
