@@ -84,11 +84,15 @@ Aguarde alguns minutos para o download das imagens e inicialização dos contain
 ## Como usar
 
 1. Acesse http://localhost:5678
-2. Crie um usuário admin (primeira execução)
+2. Crie um usuário (primeira execução)
+   ![Criação de usuário](https://media.discordapp.net/attachments/749087664552017950/1420563327930859540/tela_de_registro.png?ex=68d5da32&is=68d488b2&hm=5dcaa336cef7ca7a2f93baf3a334183bc2a9f6ffa049be4f421d18bb24674b3f&=&format=webp&quality=lossless&width=884&height=544)
 3. Crie um novo workflow
+   ![Criação de workflow](https://media.discordapp.net/attachments/749087664552017950/1420563328362610759/tela_de_registro_2.png?ex=68d5da32&is=68d488b2&hm=fb24a348158fc80139760de3d349a3764feb0be31f464d51989a7a5e75e17018&=&format=webp&quality=lossless&width=1096&height=544)
 4. Adicione o nó "Random"
+   ![Adição de nó](https://media.discordapp.net/attachments/749087664552017950/1420563328719257721/tela_inicial.png?ex=68d5da32&is=68d488b2&hm=35499bf746800f8cb1ded1fb11935c2c74971e29b96782c9b201fef44cf178ae&=&format=webp&quality=lossless&width=1110&height=544)
 5. Configure os valores mínimo e máximo
 6. Execute o workflow
+   ![Execução dos nó](https://media.discordapp.net/attachments/749087664552017950/1420563327465164900/executar.png?ex=68d5da32&is=68d488b2&hm=2c5dfa0eaf1b9717e47366110606d58d13d488992758ed2fb3b0cfc3baf4f611&=&format=webp&quality=lossless&width=1110&height=544)
 
 ### Exemplo de resultado
 
