@@ -25,14 +25,15 @@ Este projeto implementa um nó customizado para N8N que permite gerar números a
 - Geração de números verdadeiramente aleatórios
 - Interface configurável com valores mínimo e máximo
 - Integração nativa com workflows N8N
-- Tratamento de erros robusto
 - Testes automatizados em TypeScript
 
 ## Pré-requisitos
 
-- Node.js 22 ou superior
-- Docker Desktop
-- Git
+Antes de começar, certifique-se de ter instalado:
+
+- [**Node.js 22+** (LTS)](https://nodejs.org/)
+- [**Docker Desktop**](https://www.docker.com/products/docker-desktop)
+- [**Git**](https://git-scm.com/)
 
 ## Instalação e Configuração
 
